@@ -1,0 +1,4 @@
+/home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release/CMakeFiles/rebuild_cache.dir
+/home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release/CMakeFiles/edit_cache.dir
+/home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release/CMakeFiles/UPLOAD.dir
+/home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release/CMakeFiles/Bluetooth_Test1.elf.dir

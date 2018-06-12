@@ -1,0 +1,9 @@
+/home/prw/APP/clion-2017.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE= -DCMAKE_TOOLCHAIN_FILE=STM32F303xE.cmake -G "CodeBlocks - Unix Makefiles" /home/prw/CLionProjects/Bluetooth_Test1
+CMake Error at /home/prw/APP/clion-2017.3/bin/cmake/share/cmake-3.9/Modules/CMakeDetermineSystem.cmake:100 (message):
+  Could not find toolchain file: STM32F303xE.cmake
+Call Stack (most recent call first):
+  CMakeLists.txt:31 (PROJECT)
+
+
+CMake Error: CMAKE_ASM_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!

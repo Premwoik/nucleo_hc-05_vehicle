@@ -1,0 +1,19 @@
+/home/prw/APP/clion-2017.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/prw/CLionProjects/Bluetooth_Test1
+-- The C compiler identification is GNU 7.3.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Detecting C compile features
+-- Detecting C compile features - failed
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release
+
+Cannot get compiler information:
+	Compiler exited with error code 1: /usr/bin/arm-none-eabi-gcc -xc -DSTM32F303xE -DUSE_HAL_DRIVER -D__packed=__attribute__((__packed__)) -D__weak=__attribute__((weak)) -I/home/prw/CLionProjects/Bluetooth_Test1/Inc -I/home/prw/CLionProjects/Bluetooth_Test1/Drivers/STM32F3xx_HAL_Driver/Inc -I/home/prw/CLionProjects/Bluetooth_Test1/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I/home/prw/CLionProjects/Bluetooth_Test1/Drivers/CMSIS/Device/ST/STM32F3xx/Include -I/home/prw/CLionProjects/Bluetooth_Test1/Drivers/CMSIS/Include -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -g -fno-common -fmessage-length=0 -specs=nosys.specs -specs=nano.specs -std=gnu99 -O3 -DNDEBUG -fpch-preprocess -v -dD -E
+	Using built-in specs.
+	Reading specs from nosys.specs
+	arm-none-eabi-gcc: error: nosys.specs: No such file or directory
+	
+	

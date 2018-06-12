@@ -1,0 +1,15 @@
+The target system is: Generic - 1 - 
+The host system is: Linux - 4.9.96-1-MANJARO - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/arm-none-eabi-gcc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "/home/prw/CLionProjects/Bluetooth_Test1/cmake-build-release/CMakeFiles/3.9.4/CompilerIdC/CMakeCCompilerId.o"
+
