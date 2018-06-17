@@ -39,8 +39,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f3xx_hal.h"
 
-extern DMA_HandleTypeDef hdma_tim4_ch3;
-
 extern void _Error_Handler(char *, int);
 /* USER CODE BEGIN 0 */
 
@@ -89,24 +87,6 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE END TIM4_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_TIM4_CLK_ENABLE();
-  
-    /* TIM4 DMA Init */
-    /* TIM4_CH3 Init */
-    hdma_tim4_ch3.Instance = DMA1_Channel5;
-    hdma_tim4_ch3.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_tim4_ch3.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_tim4_ch3.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_tim4_ch3.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-    hdma_tim4_ch3.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-    hdma_tim4_ch3.Init.Mode = DMA_CIRCULAR;
-    hdma_tim4_ch3.Init.Priority = DMA_PRIORITY_LOW;
-    if (HAL_DMA_Init(&hdma_tim4_ch3) != HAL_OK)
-    {
-      _Error_Handler(__FILE__, __LINE__);
-    }
-
-    __HAL_LINKDMA(htim_base,hdma[TIM_DMA_ID_CC3],hdma_tim4_ch3);
-
   /* USER CODE BEGIN TIM4_MspInit 1 */
 
   /* USER CODE END TIM4_MspInit 1 */
@@ -126,9 +106,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
   
     /**TIM4 GPIO Configuration    
     PA11     ------> TIM4_CH1
-    PA12     ------> TIM4_CH2
-    PB8     ------> TIM4_CH3
-    PB9     ------> TIM4_CH4 
+    PA12     ------> TIM4_CH2 
     */
     GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -136,13 +114,6 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF10_TIM4;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStruct.Alternate = GPIO_AF2_TIM4;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE BEGIN TIM4_MspPostInit 1 */
 
@@ -161,9 +132,6 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
   /* USER CODE END TIM4_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_TIM4_CLK_DISABLE();
-
-    /* TIM4 DMA DeInit */
-    HAL_DMA_DeInit(htim_base->hdma[TIM_DMA_ID_CC3]);
   /* USER CODE BEGIN TIM4_MspDeInit 1 */
 
   /* USER CODE END TIM4_MspDeInit 1 */
